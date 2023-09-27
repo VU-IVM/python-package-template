@@ -71,7 +71,7 @@ or pip install -e . [dev] (windows) (or without dev if you don't want to have th
 
 ## Create documentation
 
-`pip install -e .'[docs]'
+`pip install -e .'[docs]' `
 
 `mkdir docs`
 
@@ -79,7 +79,7 @@ or pip install -e . [dev] (windows) (or without dev if you don't want to have th
 
 `sphinx-quickstart`
 
-Enter now when they ask you to split source and output directory. 
+Enter `n` when they ask you to split source and output directory. 
 
 Now edit config.py:
 
