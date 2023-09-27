@@ -70,7 +70,6 @@ inside the main dir of the cloned environment type in terminal (mac/linux):
 or pip install -e . [dev] (windows) (or without dev if you don't want to have those developer dependencies. However, they contain hatch and ruff which we want as developers.)
 
 ## Sources
-
 https://setuptools.pypa.io/en/latest/userguide/development_mode.html 
 
 https://towardsdatascience.com/pyproject-python-9df8cc092f61
