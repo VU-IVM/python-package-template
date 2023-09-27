@@ -1,0 +1,38 @@
+:py:mod:`your_package_name`
+===========================
+
+.. py:module:: your_package_name
+
+.. autoapi-nested-parse::
+
+   Init file for the core_modules_folder package.
+
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   your_module/index.rst
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+   :value: '0.1'
+
+   
+
+.. py:data:: __author__
+   :value: 'Your name'
+
+   
+
+.. py:data:: __email__
+   :value: 'your-email@adress.com'
+
+   
+

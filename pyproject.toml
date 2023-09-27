@@ -51,6 +51,7 @@ docs = [  # Required for ReadTheDocs
   "myst_parser",
   "sphinx",
   "sphinx_rtd_theme",
+  "nbsphinx",
   "sphinx-autoapi",
   "coverage[toml]",
 ]
