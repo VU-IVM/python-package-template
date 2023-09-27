@@ -61,7 +61,7 @@ docs = [  # Required for ReadTheDocs
 Homepage = "https://github.com/Beyond-Weather-Git" # <- ADAPT
 
 [tool.hatch.version]
-path = "core_modules_folder/__init__.py" # <- ADAPT
+path = "your_package_name/__init__.py" # <- ADAPT
 
 [tool.hatch.publish.index]
 disable = true  # Requires confirmation when publishing to pypi.
@@ -73,7 +73,7 @@ exclude = [
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["core_modules_folder"] # <- ADAPT
+packages = ["your_package_name"] # <- ADAPT
 
 [tool.hatch.envs.default]
 features = ["dev"]
@@ -109,7 +109,7 @@ ignore_missing_imports = true
 
 [tool.black]
 line-length = 88
-src_paths = ["core_modules_folder", "main_folder", "tests"] # <- ADAPT, allows you to load modules from these folders
+src_paths = ["your_package_name", "main_folder", "tests"] # <- ADAPT, allows you to load modules from these folders
 
 [tool.ruff]
 select = [
@@ -160,7 +160,7 @@ max-complexity = 10
 
 # Configuration for when ruff's import sorting is fixed.
 # [tool.ruff.isort]
-# known-first-party = ["s2spy"]
+# known-first-party = ["your_package_name"]
 # force-single-line = true
 # lines-after-imports = 2
 # no-lines-before = ["future","standard-library","third-party","first-party","local-folder"]
@@ -172,14 +172,14 @@ skip = [".gitignore", ".dockerignore"]
 skip_glob = ["docs/*"]
 force_single_line = true
 lines_after_imports = 2
-known_first_party = ["core_modules_folder"] # <- ADAPT
-src_paths = ["core_modules_folder", "tests"] # <- ADAPT where to apply isort
+known_first_party = ["your_package_name"] # <- ADAPT
+src_paths = ["your_package_name", "tests"] # <- ADAPT where to apply isort
 line_length = 120
 no_lines_before = ["FUTURE","STDLIB","THIRDPARTY","FIRSTPARTY","LOCALFOLDER"]
 
 [tool.coverage.run]
 branch = true
-source = ["core_modules_folder", "tests", "main_folder"] # <- ADAPT, which folder to run your checks
+source = ["your_package_name", "tests", "main_folder"] # <- ADAPT, which folder to run your checks
 command_line = "-m pytest"
 
 [tool.coverage.report]
