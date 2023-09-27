@@ -7,6 +7,11 @@ Welcome to your-python-package's documentation!
 ===============================================
 
 .. toctree::
+    :maxdepth: 2
+
+    Readme <readme_link>
+
+.. toctree::
    :maxdepth: 2
    :caption: Contents:
 
