@@ -1,0 +1,35 @@
+:py:mod:`your_package_name.your_module`
+=======================================
+
+.. py:module:: your_package_name.your_module
+
+.. autoapi-nested-parse::
+
+   This is summary of the purpose of your module.
+
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   your_package_name.your_module.XrUtils
+
+
+
+
+.. py:class:: XrUtils(data: xarray.DataArray)
+
+
+   Class with different xarray utility functions.
+
+   .. py:method:: sel_years(*years: Union[list, int]) -> xarray.DataArray
+
+      Select years from data (insensitive to temporal resolution).
+
+
+

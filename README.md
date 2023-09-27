@@ -69,6 +69,69 @@ inside the main dir of the cloned environment type in terminal (mac/linux):
 
 or pip install -e . [dev] (windows) (or without dev if you don't want to have those developer dependencies. However, they contain hatch and ruff which we want as developers.)
 
+## Create documentation
+
+`pip install -e .'[docs]'
+
+`mkdir docs`
+
+`cd docs`
+
+`sphinx-quickstart`
+
+Enter now when they ask you to split source and output directory. 
+
+Now edit config.py:
+
+Add extensions:
+```
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinx.ext.coverage",
+    "sphinx.ext.doctest",
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.mathjax",
+    "sphinx.ext.napoleon",
+    "sphinx.ext.todo",
+    "sphinx.ext.viewcode",
+    "autoapi.extension",
+    "myst_parser",
+]
+```
+
+```
+# -- Use autoapi.extension to run sphinx-apidoc -------
+
+autoapi_dirs = ["../s2spy"]
+```
+
+Now execute the docs build commands that are listed in pyproject toml using:
+```
+hatch run docs:build
+```
+
+To publish it online:
+
+add .readthedocs.yaml
+```
+version: 2
+
+build:
+  os: ubuntu-20.04
+  tools:
+    python: "3.9"
+
+python:
+  install:
+    - method: pip
+      path: .
+      extra_requirements:
+        - docs
+```
+Sign into https://readthedocs.org/. 
+
+Select your repository, and it will be build.
+
 ## Sources
 https://setuptools.pypa.io/en/latest/userguide/development_mode.html 
 
