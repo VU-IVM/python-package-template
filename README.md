@@ -128,6 +128,9 @@ python:
       extra_requirements:
         - docs
 ```
+Sign into https://readthedocs.org/. 
+
+Select your repository, and it will be build.
 
 ## Sources
 https://setuptools.pypa.io/en/latest/userguide/development_mode.html 
