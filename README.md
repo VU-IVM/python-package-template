@@ -116,7 +116,7 @@ extensions = [
 autoapi_dirs = ["../s2spy"]
 ```
 
-Now add this 'text' file called `readme_link.rst`, and paste the following text:
+Now add this 'text' file called `docs/readme_link.rst`, and paste the following text:
 ```
 .. include:: ../README.md
    :parser: myst_parser.sphinx_
@@ -129,7 +129,7 @@ hatch run docs:build
 
 We're almost there! To publish it online:
 
-Create a 'text' file called `.readthedocs.yaml`, and paste the following text:
+Create a 'text' file called `.readthedocs.yaml` into the main (highest level) directory, and paste the following text:
 ```
 version: 2
 
