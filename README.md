@@ -145,9 +145,12 @@ python:
       extra_requirements:
         - docs
 ```
-Sign into https://readthedocs.org/. 
+Register/sign-in to https://readthedocs.org/. 
 
-Select your repository, and it will be build.
+Select your repository, and it will be build. This documentation looks like:
+https://python-package-template-spv.readthedocs.io/en/latest/#
+
+Of course you can tweak it after your liking! 
 
 ## Sources
 
