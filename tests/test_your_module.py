@@ -22,9 +22,15 @@ def test_init(sample_data):
     assert xr_utils.data.identical(sample_data)
 
 
-def test_sel_years(sample_data):
+def test_sel_years_list(sample_data):
     """Test that the sel_years function works as expected."""
     xr_utils = XrUtils(sample_data)
-    assert xr_utils.sel_years(*[2000, 2001, 2002]).identical(
+    assert xr_utils.sel_years([2000, 2001, 2002]).identical(
         sample_data.sel(time=np.isin(sample_data.time.dt.year, [2000, 2001, 2002]))
     )
+
+def test_sel_years_int(sample_data):
+    """Test that the sel_years function works as expected."""
+    xr_utils = XrUtils(sample_data)
+    assert int(np.unique(xr_utils.sel_years(2000).time.dt.year)) == 2000
+
