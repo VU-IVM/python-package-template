@@ -4,6 +4,21 @@ This manual has been written with the purpose of guiding the reader through the 
 
 ## Why?
 
+Sticking to this format has couple of fundamental advantages:
+
+- Easy installation via pip across platforms (Windows, Mac, Linux), without additional time-effort!
+- Efficient way to standardize coding and documentation styles used within a (collaborative) research group!
+- You already have the template to go from the explorative research fase to the professional publication fase! 
+
+The styling packages will nudge you to do proper coding by either automatic formating or by adding annoying wiggles when you violate the coding style.
+
+A bit more advanced:
+- If you add python (unit)tests, it will automatically run these for each git push via Github Actions (Continuous Integration).
+- Publish your own documentation via readthedocs.org with only a few commands.
+
+
+
+
 ### Why pip install -e?
 
 We want to install our software package as pip install -e (short for --editable) because as developers we want to implement and test changes iteratively, before cutting a release and preparing a distribution archive. 
@@ -45,7 +60,7 @@ The pyproject.toml file also supports the concept of extras which allows develop
 
 In addition to the standard metadata and dependencies, pyproject.toml file also supports custom fields that can be used by third-party tools. As an example, you can consider linters, formatters and checkers such as black and mypy. This allows developers to extend the functionality of the file and add custom fields as per their requirements.
 
-(from: https://towardsdatascience.com/pyproject-python-9df8cc092f61 )
+(from: https://towardsdatascience.com/pyproject-python-9df8cc092f61)
 
 ## Instructions
 
@@ -79,11 +94,10 @@ or pip install -e . [dev] (windows) (or without dev if you don't want to have th
 
 `sphinx-quickstart`
 
-Enter `n` when they ask you to split source and output directory. 
+Enter `n` when they ask you to split source and output directory. Sphinx-quickstart 
+created docs/conf.py, but we can still tweak it. 
 
-Now edit config.py:
-
-Add extensions:
+Add the following python code into the `docs/conf.py`:
 ```
 extensions = [
     "sphinx.ext.autodoc",
@@ -97,22 +111,25 @@ extensions = [
     "autoapi.extension",
     "myst_parser",
 ]
-```
 
-```
 # -- Use autoapi.extension to run sphinx-apidoc -------
-
 autoapi_dirs = ["../s2spy"]
 ```
 
-Now execute the docs build commands that are listed in pyproject toml using:
+Now add this 'text' file called `readme_link.rst`, and paste the following text:
+```
+.. include:: ../README.md
+   :parser: myst_parser.sphinx_
+```
+
+Now execute the set of documentation build commands that are listed in pyproject toml using:
 ```
 hatch run docs:build
 ```
 
-To publish it online:
+We're almost there! To publish it online:
 
-add .readthedocs.yaml
+Create a 'text' file called `.readthedocs.yaml`, and paste the following text:
 ```
 version: 2
 
@@ -132,7 +149,8 @@ Sign into https://readthedocs.org/.
 
 Select your repository, and it will be build.
 
-## Sources
+## Sources
+
 https://setuptools.pypa.io/en/latest/userguide/development_mode.html 
 
 https://towardsdatascience.com/pyproject-python-9df8cc092f61

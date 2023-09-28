@@ -33,6 +33,7 @@ classifiers = [
 ]
 dependencies = [ # <- ADAPT
     "xarray",
+    "pandas",
 ]
 
 [project.optional-dependencies]
